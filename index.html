@@ -1,63 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Entropy | Rule the Stars</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
-    <style>
+export function App() {
+  return (
+    <div className="text-white font-body min-h-screen bg-black relative">
+      <div className="bg-fixed-custom"></div>
+      <div className="overlay"></div>
+
+      <main className="relative z-10">
+        <section className="hero-section flex flex-col items-center justify-center px-6 text-center">
+          <h1 className="font-header text-5xl md:text-9xl font-black mb-8 italic tracking-tighter uppercase leading-none">
+            RULE THE <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-6xl md:text-[120px]">
+              STARS
+            </span>
+          </h1>
+          <a
+            href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-glow inline-block text-white font-black text-2xl md:text-4xl py-6 px-16 uppercase italic tracking-tighter shadow-2xl"
+          >
+            DOWNLOAD FREE NOW
+          </a>
+        </section>
+
+        <section className="py-20 px-6 max-w-5xl mx-auto">
+          <div className="video-container">
+            <iframe
+              src="https://streamable.com/e/d8dn14?autoplay=1&muted=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          <div className="py-10 text-center">
+            <h2 className="font-header text-3xl md:text-5xl mb-6 italic text-cyan-400">
+              JOIN THE ELITE
+            </h2>
+            <p className="text-gray-300 text-xl max-w-2xl mx-auto">
+              Unlock exclusive mechs and dominate the galaxy today.
+            </p>
+          </div>
+
+          <div className="video-container">
+            <iframe
+              src="https://streamable.com/e/8m3mpw?autoplay=1&muted=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
+
+        {/* New standalone video section */}
+        <section className="py-20 px-6 max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="font-header text-3xl md:text-5xl mb-6 italic text-purple-500">
+              EXCLUSIVE GAMEPLAY
+            </h2>
+            <p className="text-gray-300 text-xl max-w-2xl mx-auto">
+              Witness the ultimate combat experience.
+            </p>
+          </div>
+          <div className="video-container">
+            <iframe
+              src="https://streamable.com/e/mryv8l?autoplay=1&muted=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
+
+        <section className="py-32 text-center px-6">
+          <a
+            href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-glow inline-block text-white font-black text-3xl py-8 px-20 uppercase italic tracking-tighter"
+          >
+            INSTALL NOW
+          </a>
+          <p className="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest italic">
+            Official Download • Verified Secure
+          </p>
+        </section>
+      </main>
+
+      <style>{`
         body, html { margin: 0; padding: 0; height: 100%; overflow-x: hidden; scroll-behavior: smooth; background-color: #000; }
         .bg-fixed-custom {
-            background-image: url('https://i.postimg.cc/zXLpt16Q/lo3ba.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+          background-image: url('https://i.postimg.cc/zXLpt16Q/lo3ba.jpg');
+          background-size: cover; background-position: center; background-attachment: fixed;
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
         }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: -1; }
         .font-header { font-family: 'Syncopate', sans-serif; }
         .font-body { font-family: 'Outfit', sans-serif; }
         .hero-section {
-            position: relative;
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('https://i.postimg.cc/zXLpt16Q/lo3ba.jpg');
-            background-size: cover; background-position: center; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+          position: relative;
+          background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('https://i.postimg.cc/zXLpt16Q/lo3ba.jpg');
+          background-size: cover; background-position: center; min-height: 100vh; display: flex; align-items: center; justify-content: center;
         }
-        .btn-glow { background: linear-gradient(90deg, #00f2ff, #bc13fe); background-size: 200% auto; animation: pulse-glow 2s infinite; border-radius: 1rem; }
-        @keyframes pulse-glow { 0% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); } 50% { box-shadow: 0 0 35px rgba(188, 19, 254, 0.7); } 100% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); } }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.3); background: #000; margin-bottom: 40px; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    </style>
-</head>
-<body class="text-white font-body">
-
-    <div class="bg-fixed-custom"></div>
-    <div class="overlay"></div>
-
-    <main class="relative z-10">
-        <section class="hero-section flex flex-col items-center justify-center px-6 text-center">
-            <h1 class="font-header text-5xl md:text-9xl font-black mb-8 italic tracking-tighter uppercase leading-none">RULE THE <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-6xl md:text-[120px]">STARS</span></h1>
-            <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" class="btn-glow inline-block text-white font-black text-2xl md:text-4xl py-6 px-16 uppercase italic tracking-tighter shadow-2xl">DOWNLOAD FREE NOW</a>
-        </section>
-
-        <section class="py-20 px-6 max-w-5xl mx-auto">
-            <div class="video-container">
-                <iframe src="https://streamable.com/e/4bxub1?autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            
-            <div class="py-10 text-center">
-                <h2 class="font-header text-3xl md:text-5xl mb-6 italic text-cyan-400">JOIN THE ELITE</h2>
-                <p class="text-gray-300 text-xl max-w-2xl mx-auto">Unlock exclusive mechs and dominate the galaxy today.</p>
-            </div>
-
-            <div class="video-container">
-                <iframe src="https://streamable.com/e/8m3mpw?autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="py-32 text-center px-6">
-            <a href="https://to.wendiro.com/u?k=220e77cdef8b42929dd5c06ff71b4ae5&via=5773" class="btn-glow inline-block text-white font-black text-3xl py-8 px-20 uppercase italic tracking-tighter">INSTALL NOW</a>
-            <p class="mt-8 text-gray-500 text-xs font-bold uppercase tracking-widest italic">Official Download • Verified Secure</p>
-        </section>
-    </main>
-
-</body>
-</html>
+        .btn-glow { 
+          background: linear-gradient(90deg, #00f2ff, #bc13fe); 
+          background-size: 200% auto; 
+          animation: pulse-glow 2s infinite; 
+          border-radius: 1rem; 
+          text-decoration: none;
+        }
+        @keyframes pulse-glow { 
+          0% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); } 
+          50% { box-shadow: 0 0 35px rgba(188, 19, 254, 0.7); } 
+          100% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.5); } 
+        }
+        .video-container { 
+          position: relative; 
+          padding-bottom: 56.25%; 
+          height: 0; 
+          overflow: hidden; 
+          border-radius: 20px; 
+          border: 1px solid rgba(0, 242, 255, 0.3); 
+          background: #000; 
+          margin-bottom: 40px; 
+        }
+        .video-container iframe { 
+          position: absolute; 
+          top: 0; 
+          left: 0; 
+          width: 100%; 
+          height: 100%; 
+        }
+      `}</style>
+    </div>
+  );
+}
